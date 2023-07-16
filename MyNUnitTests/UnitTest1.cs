@@ -1,11 +1,13 @@
 ﻿namespace MyNUnitTests;
 
+using System.Reflection;
 using Xamarin.UITest;
 using Xamarin.UITest.Queries;
+using MauiUITestSample;
 
 //[TestFixture]
 [TestFixture]
-//[TestFixture(Platform.iOS)]
+//[TestFixture(Platform.iOS)]  //not find test in visual studio for mac
 public class UnitTest1
 {
     IApp app;
@@ -42,6 +44,7 @@ public class UnitTest1
         app.Tap(c => c.Marked("Clicked 2 times"));
 
         Assert.IsTrue(results.Any());
+        //MauiUITestSample.MainPage.OnCounterClicked(sender, e);
     }
 }
 
